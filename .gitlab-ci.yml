@@ -1,0 +1,83 @@
+stages:
+  - build
+  - deploy
+
+build_test:
+  stage: build
+  image: node
+  environment:
+    name: test
+  cache:
+    key: out
+    paths:
+      - out/
+    policy: push
+  script:
+    - yarn install
+    - yarn export
+  except:
+    - master
+  when: manual
+
+deploy_test:
+  stage: deploy
+  image: alpine
+  environment:
+    name: test
+  dependencies:
+    - build_test
+  cache:
+    key: out
+    paths:
+      - out/
+    policy: pull
+  script:
+    - apk update && apk upgrade
+    - apk add openssh rsync
+    - mkdir -m 700 ~/.ssh
+    - echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+    - chmod 600 ~/.ssh/id_rsa
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+    - rsync -avzh --delete-after -e "ssh -p $SERVER_DESTINATION_PORT_TEST" ./out/ $SERVER_DESTINATION_TEST
+  except:
+    - master
+  when: manual
+
+build_staging:
+  stage: build
+  image: node
+  environment:
+    name: staging
+  cache:
+    key: out
+    paths:
+      - out/
+    policy: push
+  script:
+    - yarn install
+    - yarn export
+  only:
+    - /^release/.*$/
+
+deploy_staging:
+  stage: deploy
+  image: alpine
+  environment:
+    name: staging
+  dependencies:
+    - build_staging
+  cache:
+    key: out
+    paths:
+      - out/
+    policy: pull
+  script:
+    - apk update && apk upgrade
+    - apk add openssh rsync
+    - mkdir -m 700 ~/.ssh
+    - echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+    - chmod 600 ~/.ssh/id_rsa
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+    - rsync -avzh --delete-after -e "ssh -p $SERVER_DESTINATION_PORT_STAGING" ./out/ $SERVER_DESTINATION_STAGING
+  only:
+  - /^release/.*$/
