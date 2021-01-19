@@ -27,6 +27,9 @@
         &.even {
             background-image: url('../public/images/treatment-section-pattern-right.png');
             background-position-x: right;
+            @media screen and (max-width: $small-width) {
+                background-size: 17rem;
+            }
         }
     }
     .content {
@@ -62,10 +65,16 @@
                 }
             }            
         }
-        @media (min-width: $small-width) {
-            .hand-icon {
+        .hand-icon {
+            display: none;
+            @media (max-width: $small-width) {
+                position:relative;
+                display: flex;
+            }
+            img {
                 width: 10%;
-                position: block;
+                display: block;
+                margin: auto;
             }
         }
     }
