@@ -1,0 +1,32 @@
+.myIndex {    
+    display: flex;
+    .myIndex_sub{
+        position: relative;
+        width: 50%;
+        text-align: center;
+        .myIndex_sub_b_img {
+            width: 60%;
+        }
+        .myIndex_sub_c_img {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 20%;                        
+        }
+        .myIndex_sub_c_img_left {
+            left: auto;
+            right: 0;
+        }
+        &:first-child {
+            background-image: url('/images/index_left_bg.png');
+            background-size: 200%;
+            margin-right: 2px;
+        }
+        &:last-child {
+            background-image: url('/images/index_right_bg.png');
+            background-size: 200%;
+            background-position-x: right;
+            margin-left: 2px;
+        }
+    }
+}

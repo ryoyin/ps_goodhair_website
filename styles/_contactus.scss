@@ -1,0 +1,44 @@
+.contact-us {
+    color: #707070;
+    text-align: center;
+    .section {
+        background-image: url('../public/images/contact-us-right.png'), url('../public/images/contact-us-left.png');
+        background-repeat: no-repeat;
+        background-size: auto 80%;
+        background-position-x: right, left;
+        background-position-y: top, bottom;
+        >:first-child {
+            padding: 3rem 0;
+        }
+        img {
+            width: 375px;
+        }
+        >:last-child {
+            padding: 3rem 0;
+        }
+    }
+    .address {
+        img {
+            width: 375px;
+        }
+        >:nth-child(2) {
+            padding: 3rem 0 0;
+        }
+        >:last-child {
+            background-image: url('../public/images/contact-us-bottom-bg.png');
+            background-size: 100% auto;
+            background-position: center;
+
+            text-align: center;
+            padding: 3rem 0;
+            color: #6e90b8;
+            font-size: 2rem;
+            span {
+                font-size: 1rem;
+                color: #5baccd;
+                display: block;
+                text-decoration: underline;
+            }
+        }
+    }
+}
