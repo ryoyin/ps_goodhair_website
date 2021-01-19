@@ -67,7 +67,7 @@
         }
         .hand-icon {
             display: none;
-            @media (max-width: $small-width) {
+            @media screen and (max-width: $small-width) {
                 position:relative;
                 display: flex;
             }
