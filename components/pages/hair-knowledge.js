@@ -79,9 +79,14 @@ const HairKnowledgeLayout = () => {
                     <div className="row">
                         <div className="col-md-12 description">醫療級軟激光生髪科技，針對易脫髮的生長週期，以「止脫」為理念，專門解決大量脫髮問題，延長頭髮的壽命，平衡脫髮速度及生長速度。</div>
                         <div className="col-md-12 hair-knowledge"><img src="/images/treatment-section-1-info.png" /></div>
+                        <div className="hand-icon">
+                            <img src="/images/finger_icon.png" />
+                        </div>
                     </div>
                 </div>
             </div>
+
+
 
             <div className="section even">
                 <div className="container">

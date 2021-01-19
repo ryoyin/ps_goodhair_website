@@ -62,6 +62,12 @@
                 }
             }            
         }
+        @media (min-width: $small-width) {
+            .hand-icon {
+                width: 10%;
+                position: block;
+            }
+        }
     }
     .banner {        
         background-image: url('../public/images/contact-us-left.png');
