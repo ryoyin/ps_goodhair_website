@@ -249,9 +249,13 @@
         margin: 0 auto;
         padding: 1.5rem 0 4rem; 
         .description {
-            font-size: 1.4rem;
-            text-align: left;
-            padding: 38px
+            p {
+                font-size: 1.4rem;
+                text-align: justify;
+                text-align-last: center;
+                padding: 38px;
+                vertical-align: middle;
+            }            
         }
         .fa-sort-down {
             font-size: 3rem;
