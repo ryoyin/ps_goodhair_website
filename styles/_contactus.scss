@@ -1,6 +1,17 @@
 .contact-us {
     color: #707070;
     text-align: center;
+    .banner {
+        overflow: hidden;
+        @media screen and (max-width: $small-width) {
+        img{
+            width: 145%;
+            position: relative;
+            height: 100%;
+            left: -23%;
+        }
+}
+    }
     .section {
         background-image: url('../public/images/contact-us-right.png'), url('../public/images/contact-us-left.png');
         background-repeat: no-repeat;
