@@ -7,11 +7,20 @@
         background-size: auto 80%;
         background-position-x: right, left;
         background-position-y: top, bottom;
+        @media screen and (max-width: $small-width) {
+            background-size: 17rem;
+        }
+
         >:first-child {
             padding: 3rem 0;
         }
         img {
             width: 375px;
+            @media screen and (max-width: $small-width) {
+                width: 57%;
+            }
+    
+    
         }
         >:last-child {
             padding: 3rem 0;
@@ -20,7 +29,12 @@
     .address {
         img {
             width: 375px;
+            @media screen and (max-width: $small-width) {
+                width: 57%;
+
+            }
         }
+
         >:nth-child(2) {
             padding: 3rem 0 0;
         }
