@@ -18,7 +18,7 @@ const HairKnowledgeLayout = (props) => {
                                 <div className="banner-mobile-hero"><img src="/images/m_women_mobile_banner.png" /></div>
                             </div>
                             <form>
-                                <div className="caption">一分鐘線上自助登記 {tn.title} </div>
+                                <div className="caption">一分鐘線上自助登記 </div>
                                 <input type="text" name="name" placeholder="姓名" required />
                                 <input type="text" name="tel" placeholder="手提電話" required />
                                 <input type="text" name="email" placeholder="電郵" required />
@@ -77,7 +77,7 @@ const HairKnowledgeLayout = (props) => {
             <div className="content">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-12 description">醫療級軟激光生髪科技，針對易脫髮的生長週期，以「止脫」為理念，專門解決大量脫髮問題，延長頭髮的壽命，平衡脫髮速度及生長速度。</div>
+                        <div className="col-md-12 description">{tn.knowyourhair}</div>
                         <div className="col-md-12 hair-knowledge"><img src="/images/treatment-section-1-info.png" /></div>
                         <div className="hand-icon">
                             <img src="/images/finger_icon.png" />
