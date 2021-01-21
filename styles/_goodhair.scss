@@ -230,7 +230,11 @@ footer {
     color: #707070;
     font-size: 1rem;
     background-color: #f3fdf8;
+    @media (max-width: $small-width) {
+        background-color: #ffffff;
+    }
     padding: 1.3rem 0 1.2rem;
+
     .footer-social-media {        
         text-align: center;
         padding: 2rem 0 0.5rem;

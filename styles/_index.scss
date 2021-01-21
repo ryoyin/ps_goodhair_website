@@ -1,5 +1,8 @@
+
+
 .myIndex {    
     display: flex;
+    overflow: hidden;
     .myIndex_sub{
         position: relative;
         width: 50%;
@@ -27,6 +30,44 @@
             background-size: 200%;
             background-position-x: right;
             margin-left: 2px;
+        }
+    }
+}
+@media (max-width:$small-width) {
+    .myIndex {
+        display: flex;
+        overflow: hidden;
+        .myIndex_sub {
+            position: relative;
+            width: 50%;
+            text-align: center;
+            .myIndex_sub_b_img {
+                width: 165%;
+                padding-top: 64%;
+                margin-left: -36%;
+            }
+            .myIndex_sub_c_img {
+                position: absolute;
+                bottom: 0;
+                width: 43%;
+                left: 0;
+            }
+            .myIndex_sub_c_img_left {
+                left: auto;
+                right: 0;
+            }
+            &:first-child {
+                background-image: url(/images/index_left_bg.png);
+                background-size: 555%;
+                background-position-x: 38.5%;
+                margin-right: 5px;
+            }
+            &:last-child {
+                background-image: url(/images/index_right_bg.png);
+                background-size: 555%;
+                background-position-x: 61.5%;
+                margin-left: 2px;
+            }
         }
     }
 }
