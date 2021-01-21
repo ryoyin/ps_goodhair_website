@@ -1,8 +1,8 @@
 import Link from 'next/link'
-// import Form from 'next/form'
-// import input from 'next/input'
 
-const HairKnowledgeLayout = () => {
+const HairKnowledgeLayout = (props) => {
+    const gender = props.gender
+    const tn = props.translation[gender]
     return (
         <main className="treatment">
             <div className="banner">
@@ -18,7 +18,7 @@ const HairKnowledgeLayout = () => {
                                 <div className="banner-mobile-hero"><img src="/images/m_women_mobile_banner.png" /></div>
                             </div>
                             <form>
-                                <div className="caption">一分鐘線上自助登記</div>
+                                <div className="caption">一分鐘線上自助登記 {tn.title} </div>
                                 <input type="text" name="name" placeholder="姓名" required />
                                 <input type="text" name="tel" placeholder="手提電話" required />
                                 <input type="text" name="email" placeholder="電郵" required />

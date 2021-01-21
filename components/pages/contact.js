@@ -11,7 +11,7 @@ const ContactLayout = () => {
                 </div>
                 <div className="row">
                     <div className="col-lg-12">
-                    <img src="/images/contact-us-about-us.png" />
+                        <img src="/images/contact-us-about-us.png" />
                     </div>
                 </div>
                 <div className="row">
@@ -22,7 +22,7 @@ const ContactLayout = () => {
             <div className="address">
                 <div className="row">
                     <div className="col-lg-12">
-                    <img src="/images/contact-us-address.png" />
+                        <img src="/images/contact-us-address.png" />
                     </div>
                 </div>
                 <div className="row">
