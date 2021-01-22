@@ -10,8 +10,8 @@ const HairKnowledgeLayout = (props) => {
                     <div className="row">
                         <div className="col-md-12">
                             <div className="desktop">
-                                <div className="banner-hero"><img src="/images/treatment_banner_girl.png" /></div>
-                                <div className="banner-tagline"><img src="/images/d_hp_tagline_woman.png" /></div>
+                                <div className="banner-hero"><img src={tn.banner_hero} /></div>
+                                <div className="banner-tagline"><img src={tn.banner_tagline} /></div>
                                 <div className="banner-free-trial-banner"><img src="/images/treatment_free_trial_banner.png" /></div>
                             </div>
                             <div className="mobile">
@@ -77,7 +77,7 @@ const HairKnowledgeLayout = (props) => {
             <div className="content">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-12 description">{tn.knowyourhair}</div>
+                        <div className="col-md-12 description">醫療級軟激光生髮科技，針對易脫髮的生長週期，以「止脫」為理念，專門解決大量脫髮問題，延長頭髮的壽命，平衡脫髮速度及生長速度。</div>
                         <div className="col-md-12 hair-knowledge"><img src="/images/treatment-section-1-info.png" /></div>
                         <div className="hand-icon">
                             <img src="/images/finger_icon.png" />
@@ -129,10 +129,10 @@ const HairKnowledgeLayout = (props) => {
                 <div className="container">
                     <div className="row successful-case-img-block">
                         <div className="col-lg-6 col-md-12">
-                            <img src="/images/treatment-girl-case-before.png" />
+                            <img src={tn.case_before} />
                         </div>
                         <div className="col-lg-6 col-md-12">
-                            <img src="/images/treatment-girl-case-after.png" />
+                            <img src={tn.case_after} />
                         </div>
                     </div>
                     <div className="row remark">

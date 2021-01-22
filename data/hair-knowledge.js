@@ -1,13 +1,16 @@
 const hairKnowledge = {
     male: {
-        title: 'male title',
-        decription: 'male decription',
-        knowyourhair: '醫療級軟激光生髪科技，針對易脫髮的生長週期，以「止脫」為理念，專門解決大量脫髮問題，延長頭髮的壽命，平衡脫髮速度及生長速度。'
+        banner_hero: "/images/treatment_banner_boy.png",
+        banner_tagline: "/images/d_hp_tagline_man.png",
+        case_before: "/images/treatment-boy-case-before.png",
+        case_after: "/images/treatment-boy-case-after.png",
     },
     female: {
-        title: 'female title',
-        decription: 'female decription',
-        knowyourhair: '醫療級軟激光生髪科技，針對易脫髮的生長週期，以「止脫」為理念，專門解決大量脫髮問題，延長頭髮的壽命，平衡脫髮速度及生長速度。'
+        banner_hero: "/images/treatment_banner_girl.png",
+        banner_tagline: "/images/d_hp_tagline_woman.png",
+        case_before: "/images/treatment-girl-case-before.png",
+        case_after: "/images/treatment-girl-case-after.png",
+
     }
 }
 
