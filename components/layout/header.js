@@ -1,35 +1,11 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
-import Cookies from 'universal-cookie'
+import { getCurrentPage, getGender } from '@/functions/common'
 
 const Header = () => {
 
-    const cookies = new Cookies();    
-    const router = useRouter()
-    const pathname = router.pathname
-
-    let gender = 'female'
-    let isIndexPage = false
-
-    // check index page
-    if(pathname == "/") {
-        isIndexPage = true
-        cookies.remove('gender')
-    }   
-
-    // check treatment page
-    const checkPath = pathname.split("/")[1];
-    const valid_gender = ["male", "female"]        
-    if(valid_gender.includes(checkPath)) {
-        cookies.set('gender', checkPath)
-        gender = checkPath
-    }
-    
-    // other pages
-    if(cookies.get('gender') != null) {
-        gender = cookies.get('gender')
-    }
+    const current_page = getCurrentPage()
+    const gender = getGender()
 
     return (
         <>
@@ -53,7 +29,7 @@ const Header = () => {
                         </button>
                         <div className="collapse navbar-collapse" id="navbarCollapse">
                             <ul className="navbar-nav me-auto mb-2 mb-md-0">
-                            {isIndexPage ? (<></>) : ( 
+                            {current_page == 'index' ? (<></>) : ( 
                                 <>                     
                                     <li className="nav-item active">
                                         <a className="nav-link" aria-current="page" href="/">主頁</a>
@@ -90,22 +66,6 @@ const Header = () => {
                     <img src="/images/d_man_switch_btn.png" alt="Good Hair Logo" />
                 </a>
             </Link>   
-            
-            <style jsx>{`
-                .bd-placeholder-img {
-                font-size: 1.125rem;
-                text-anchor: middle;
-                -webkit-user-select: none;
-                -moz-user-select: none;
-                user-select: none;
-                }
-
-                @media (min-width: 768px) {
-                .bd-placeholder-img-lg {
-                    font-size: 3.5rem;
-                }
-                }
-            `}</style>
         </>
     )
 }
