@@ -1,7 +1,12 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import { getCurrentPage, getGender } from '@/functions/common'
 
 const Header = () => {
+
+    const current_page = getCurrentPage()
+    const gender = getGender()
+
     return (
         <>
             <Head> 
@@ -24,25 +29,31 @@ const Header = () => {
                         </button>
                         <div className="collapse navbar-collapse" id="navbarCollapse">
                             <ul className="navbar-nav me-auto mb-2 mb-md-0">
-                                <li className="nav-item active">
-                                    <a className="nav-link" aria-current="page" href="/">主頁</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" href="/hair-knowledge/">認識頭髮</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" href="#">療程推介</a>
-                                    {/* <ul className="nav-item-sub">
-                                        <li className="arrow-up"><i className="fas fa-angle-up"></i></li>
-                                        <li><a href="#">123</a></li>
-                                        <li><a href="#">456</a></li>
-                                    </ul> */}
-                                </li>
-                            </ul>
+                            {current_page == 'index' ? (<></>) : ( 
+                                <>                     
+                                    <li className="nav-item active">
+                                        <a className="nav-link" aria-current="page" href="/">主頁</a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link prefetch as={`/${gender}/hair-knowledge`} href={`/${gender}/hair-knowledge`}>
+                                            <a className="nav-link">認識頭髮</a>
+                                        </Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a className="nav-link" href="#">療程推介</a>
+                                        {/* <ul className="nav-item-sub">
+                                            <li className="arrow-up"><i className="fas fa-angle-up"></i></li>
+                                            <li><a href="#">123</a></li>
+                                            <li><a href="#">456</a></li>
+                                        </ul> */}
+                                    </li>                      
+                                </>
+                            )}
+                            </ul> 
                             <div className="d-flex lang-bar">
                                 <a href="/">繁</a>
-                                <a href="/">简</a>
-                                <a href="/">EN</a>
+                                {/* <a href="/">简</a>
+                                <a href="/">EN</a> */}
                             </div>
                         </div>
                     </div>
@@ -55,22 +66,6 @@ const Header = () => {
                     <img src="/images/d_man_switch_btn.png" alt="Good Hair Logo" />
                 </a>
             </Link>   
-            
-            <style jsx>{`
-                .bd-placeholder-img {
-                font-size: 1.125rem;
-                text-anchor: middle;
-                -webkit-user-select: none;
-                -moz-user-select: none;
-                user-select: none;
-                }
-
-                @media (min-width: 768px) {
-                .bd-placeholder-img-lg {
-                    font-size: 3.5rem;
-                }
-                }
-            `}</style>
         </>
     )
 }
