@@ -1,7 +1,18 @@
 import IndexLayout from '../components/pages/index'
+import {getTDK} from '@/data/seo/tdk'
 
-export default function Home() {
+const Home = () => {
   return (
     <IndexLayout />
   )
 }
+
+Home.getInitialProps = async() => {
+  const tdk = await getTDK()
+
+  return {
+    tdk: tdk.index
+  }
+}
+
+export default Home

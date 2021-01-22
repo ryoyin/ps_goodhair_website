@@ -8,7 +8,7 @@ import Footer from '../components/layout/footer'
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <Header />
+      <Header {...pageProps} />
       <Component {...pageProps} />
       <Footer />
     </>

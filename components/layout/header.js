@@ -2,18 +2,24 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { getCurrentPage, getGender } from '@/functions/common'
 
-const Header = () => {
-
+const Header = (props) => {
+    
     const current_page = getCurrentPage()
     const gender = getGender()
 
-    return (
+    return (        
         <>
             <Head> 
                 <meta charSet="utf-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <meta name="description" content="Good Hair" />
-                <title>Good Hair</title>        
+                {current_page == '404' ? '' : (
+                    <>
+                        <title>{ props.tdk.title } | Good Hair</title>        
+                        <meta name="description" content={props.tdk.description} />
+                        <meta name="keywords" content={props.tdk.keywords} />
+                    </>
+                )}
                 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossOrigin="anonymous"></link>
             </Head>
             <header>
@@ -29,7 +35,7 @@ const Header = () => {
                         </button>
                         <div className="collapse navbar-collapse" id="navbarCollapse">
                             <ul className="navbar-nav me-auto mb-2 mb-md-0">
-                            {current_page == 'index' ? (<></>) : ( 
+                            {current_page == 'index' ? '' : ( 
                                 <>                     
                                     <li className="nav-item active">
                                         <a className="nav-link" aria-current="page" href="/">主頁</a>

@@ -15,7 +15,12 @@ const getCurrentPage = () => {
         return checkPath
     }
 
-    return 'others'
+    const valid_page = ["contact"]        
+    if(valid_page.includes(checkPath)) {
+        return checkPath
+    }
+
+    return '404'
 }
 
 const getGender = () => {
