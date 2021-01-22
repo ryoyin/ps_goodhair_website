@@ -4,7 +4,7 @@ const HairKnowledgeLayout = (props) => {
     const gender = props.gender
     const tn = props.translation[gender]
     return (
-        <main className="treatment">
+        <main className={`treatment treatment-${gender}`}>
             <div className="banner">
                 <div className="container">
                     <div className="row">
