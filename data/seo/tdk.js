@@ -22,7 +22,18 @@ const tdk = {
         title: '關於我們',
         description: '',
         keywords: ''
+    },
+    privacy: {
+        title: '私隱政策',
+        description: '',
+        keywords: ''
+    },
+    disclamier: {
+        title: '免責條款',
+        description: '',
+        keywords: ''
     }
+
 }
 
 export const getTDK = () => {
