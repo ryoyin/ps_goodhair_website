@@ -3,6 +3,7 @@ import Layout from '@/components/layout/layout'
 import HairKnowledgeLayout from '@/components/pages/hair-knowledge'
 
 const HairKnowledge = (props) => {
+    
     const currentPage = props.currentPage
     const gender      = props.gender
     const translation = props.translation
@@ -21,12 +22,29 @@ const HairKnowledge = (props) => {
 
 }
 
-HairKnowledge.getInitialProps = async({query}) => {
+export async function getStaticProps({ params }) {
+
     const currentPage = 'hair-knowledge'
-    const gender      = query.gender
+    const gender      = params.gender
     const translation = await getTranslationByGender(gender)
 
-    return { translation, gender, currentPage }
+    return { props: { translation, gender, currentPage } }
+
+}
+
+export async function getStaticPaths() {
+
+    // set pre-render path for male and female
+    const paths = [
+        { params: { gender: 'male' } },
+        { params: { gender: 'female' } }
+    ]
+  
+    // We'll pre-render only these paths at build time.
+    // { fallback: false } means other routes should 404.
+    // fallback does not support SSG
+    return { paths, fallback: false }
+
 }
 
 export default HairKnowledge
