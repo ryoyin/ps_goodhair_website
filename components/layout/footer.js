@@ -15,7 +15,7 @@ const Footer = () => {
                     <Link href="/contact"><a>關於我們</a></Link>
                     <Link href="/"><a>門市地址</a></Link>
                     <Link href="/privacy"><a>私隱政策</a></Link>
-                    <Link href="/"><a>免責條款</a></Link>
+                    <Link href="/disclamier"><a>免責條款</a></Link>
                 </div>
                 <hr />
                 <div className="copyright">COPYRIGHT©PERFECT MEDICAL LIMITED 2020 All Right RESERVED.</div>
