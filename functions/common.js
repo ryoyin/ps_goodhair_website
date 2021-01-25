@@ -1,32 +1,17 @@
-import { useRouter } from 'next/router'
 import Cookies from 'universal-cookie'
 
-const getCurrentPage = () => {
-    const router = useRouter()
-    const pathname = router.pathname
-
-    // check index page
-    if(pathname == "/") return 'index'
-
-    // check page that defined gender path
-    const checkPath = pathname.split("/")[1];
-    const valid_gender = ["male", "female"]        
-    if(valid_gender.includes(checkPath)) {
-        return checkPath
-    }
-
-    return 'others'
-}
-
-const getGender = () => {
+const getGender = (currentPage) => {
     
-    const cookies = new Cookies();    
+    const cookies       = new Cookies();
     const cookie_gender = cookies.get('gender')
-    const current_page = getCurrentPage()
+    const current_page  = currentPage
 
-    let gender = cookie_gender == null ? 'female': cookie_gender
+    let gender = cookie_gender == null || cookie_gender == '' ? 'female': cookie_gender
     
-    if(current_page == 'index') cookies.remove('gender')
+    if(current_page == 'index') {
+        cookies.remove('gender')
+        return null  
+    } 
 
     const valid_gender = ['male', 'female']        
     if(valid_gender.includes(current_page)) {
@@ -39,6 +24,5 @@ const getGender = () => {
 }
 
 export {
-    getCurrentPage,
     getGender
 }
