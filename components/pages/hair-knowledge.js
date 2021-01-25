@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 const HairKnowledgeLayout = (props) => {
     const gender = props.gender
-    const tn = props.translation[gender]
+    const tn = props.translation.content
     return (
         <main className={`treatment treatment-${gender}`}>
             <div className="banner">
