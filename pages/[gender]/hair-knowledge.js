@@ -9,18 +9,20 @@ const HairKnowledge = (props) => {
 
     return (
         <Layout 
-            currentPage={ currentPage }
-            gender= { gender }
-            translation={ translation }
+            currentPage = { currentPage }
+            gender      = { gender }
+            translation = { translation }
         >
-            <HairKnowledgeLayout gender={ gender } translation={ translation } />
+            <HairKnowledgeLayout 
+                gender      = { gender }
+                translation = { translation } />
         </Layout>
     )
 
 }
 
 HairKnowledge.getInitialProps = async({query}) => {
-    const gender = query.gender
+    const gender      = query.gender
     const translation = await getTranslationByGender(gender)
     const currentPage = 'hair-knowledge'
 
