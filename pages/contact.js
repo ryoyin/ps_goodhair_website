@@ -7,11 +7,11 @@ const Contact = () => {
     )
 }
 
-Contact.getInitialProps = async() => {
+Contact.getInitialProps = async () => {
     const tdk = await getTDK()
-  
+
     return {
-      tdk: tdk.contact
+        tdk: tdk.contact
     }
 }
 
