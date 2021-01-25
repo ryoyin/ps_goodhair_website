@@ -1,6 +1,6 @@
-const DisclamierLayout = () => {
+const DisclaimerLayout = () => {
     return (
-        <main className="disclamier">
+        <main className="disclaimer">
             <div className="container">
                 <div className="banner">
 
@@ -99,4 +99,4 @@ Good Hair保留一切權力。<br></br>
 }
 
 
-export default DisclamierLayout
+export default DisclaimerLayout

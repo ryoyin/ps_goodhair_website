@@ -28,7 +28,7 @@ const tdk = {
         description: '',
         keywords: ''
     },
-    disclamier: {
+    disclaimer: {
         title: '免責條款',
         description: '',
         keywords: ''
