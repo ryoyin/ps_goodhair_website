@@ -22,9 +22,9 @@ const HairKnowledge = (props) => {
 }
 
 HairKnowledge.getInitialProps = async({query}) => {
+    const currentPage = 'hair-knowledge'
     const gender      = query.gender
     const translation = await getTranslationByGender(gender)
-    const currentPage = 'hair-knowledge'
 
     return { translation, gender, currentPage }
 }
