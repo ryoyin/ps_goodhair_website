@@ -1,409 +1,449 @@
 .treatment {
-    color: #707070;
-    text-align: center;
-    // text-align: justify;
-    // text-align-last: center;
-    .section {
-        background-image: url('../public/images/treatment-section-pattern.png');
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position-x: left;
-        background-position-y: top;
-        background-color: #f3fdf8;
+  color: #707070;
+  text-align: center;
+  // text-align: justify;
+  // text-align-last: center;
+  .section {
+    background-image: url("../public/images/treatment-section-pattern.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: left;
+    background-position-y: top;
+    background-color: #f3fdf8;
+    @media screen and (max-width: $small-width) {
+      background-size: 17rem;
+    }
+    > div {
+      padding: 2rem 0;
+    }
+    .section-heading {
+      height: 150px;
+    }
+    &.first {
+      @media screen and (max-width: $mid-width) {
+        margin-top: 15px;
+      }
+    }
+    &.even {
+      background-image: url("../public/images/treatment-section-pattern-right.png");
+      background-position-x: right;
+      @media screen and (max-width: $small-width) {
+        background-size: 17rem;
+      }
+    }
+  }
+  .content {
+    max-width: $mid-width;
+    margin: 0 auto;
+    padding-bottom: 4rem;
+    @media screen and (max-width: $small-width) {
+      // font-size: 26px;
+    }
+    .description {
+      margin: 0 auto;
+      padding: 40px 10px 30px;
+      text-align: justify;
+      text-align-last: center;
+    }
+    .info {
+      @media screen and (max-width: $small-width) {
+        padding-right: 7.5%;
+      }
+      img {
+        width: 100%;
+      }
+    }
+    .hair-knowledge {
+      @media screen and (max-width: $small-width) {
+        overflow: auto;
+      }
+      img {
+        width: 100%;
         @media screen and (max-width: $small-width) {
-            background-size: 17rem;
+          width: auto;
+          height: 400px;
         }
-        >div {
-            padding: 2rem 0;
-        }        
-        .section-heading {
-            height: 150px;
-        }   
-        &.first {
-            @media screen and (max-width: $mid-width) {
-                margin-top: 15px;
-            }
-        }
-        &.even {
-            background-image: url('../public/images/treatment-section-pattern-right.png');
-            background-position-x: right;
-            @media screen and (max-width: $small-width) {
-                background-size: 17rem;
-            }
-        }
+      }
     }
-    .content {
-        max-width: $mid-width;
-        margin: 0 auto;
-        padding-bottom: 4rem;
-        @media screen and (max-width: $small-width) {
-            // font-size: 26px;
-        }
-        .description {
-            margin: 0 auto;
-            padding: 40px 10px 30px;
-            text-align: justify; 
-            text-align-last: center;
-        }
-        .info { 
-            @media screen and (max-width: $small-width) {
-                padding-right: 7.5%;
-            }
-            img {
-                width: 100%;                
-            }
-        }
-        .hair-knowledge {
-            @media screen and (max-width: $small-width) {
-                overflow: auto;
-            }           
-            img {
-                width: 100%;
-                @media screen and (max-width: $small-width) {
-                    width: auto;
-                    height: 400px;
-                }
-            }            
-        }
-        .hand-icon {
-            display: none;
-            @media screen and (max-width: $small-width) {
-                position:relative;
-                display: flex;
-            }
-            img {
-                width: 20%;
-                display: block;
-                margin: auto;
-                padding: 3%;
-            }
-        }
+    .hand-icon {
+      display: none;
+      @media screen and (max-width: $small-width) {
+        position: relative;
+        display: flex;
+      }
+      img {
+        width: 20%;
+        display: block;
+        margin: auto;
+        padding: 3%;
+      }
     }
-    .banner {        
-        background-image: url('../public/images/contact-us-left.png');
-        background-repeat: no-repeat;
-        background-size: auto 64%;
-        background-position-x: left;
-        background-position-y: top;
+  }
+  .banner {
+    background-image: url("../public/images/contact-us-left.png");
+    background-repeat: no-repeat;
+    background-size: auto 64%;
+    background-position-x: left;
+    background-position-y: top;
 
-        .container {
-            max-width: 1320px;
-            .mobile {
-                display: none;
-            }
-            @media screen and (max-width: $max-width) {
-                padding: 0;
-            }
-            @media screen and (max-width: $small-width) {
-                .desktop {
-                    display: none;
-                }
-                .mobile {
-                    display: block;
-                }
-            }
-        }
-        .banner-hero {
-            position: absolute;
-            left: -10px;
-            width: 100%;
-            z-index: 700;
-            img {
-                width: 515px;
-            }
-            @media screen and (max-width: $mid-width) {
-                position: relative;
-                left: 320px;
-                width: 515px;
-            }
-            @media screen and (max-width: 800px) {
-                left: 256px;
-            }
-        }
-        .banner-tagline {
-            position: absolute;
-            top: 186px;
-            z-index: 500;
-            img {
-                width: 600px;
-            }
-        }
-        .row{
-            position: relative;
-            height: 593px;
-            @media screen and (max-width: $mid-width) {
-                display: inline-block;
-            }
-        }
-        @media screen and (max-width: 1320px) {
-            .banner-tagline {            
-                top: 300px;
-                img {
-                    width: 450px;
-                }
-            }
-        }
-    }
-    form {
-        background-image: url('../public/images/form_pattern_top_left.png'), url('../public/images/form_pattern_bottom_right.png');
-        background-repeat: no-repeat;
-        background-size: auto 28%;
-        background-position-x: left, right;
-        background-position-y: top, bottom;
-        border-radius: 25px;
-        position: absolute;
-        right: 10px;
-        width: 438px;
-        z-index: 1000;
-        // height: 674px;
-        background-color: #b6e5e6;
-
-        @media screen and (max-width: $mid-width) {
-            position: relative;
-            width: 100%;
-            border-radius: 0;
-            right: unset;
-        }
-
-        .caption {
-            color: #6e90b8;
-            padding: 25px 28px 20px;
-            font-size: 2rem;
-            background-image: url(../public/images/menu_d_s.png);
-            background-repeat: no-repeat;
-            background-size: auto 85%;
-            background-position-x: right;
-            background-position-y: bottom;
-        }
-        input, select {
-            width: 88%;
-            border-color: #dedede;
-            border-style: solid;
-            border-width: 1px;
-            padding: 5px 14px;
-            margin-bottom: 9px;
-            border-radius: 5px;
-            font-size: 1rem;
-            // &::-webkit-input-placeholder {
-            //     color: peachpuff;
-            //     font-size: 13px;
-            // }
-            // &::-moz-placeholder {
-            //     color: peachpuff;
-            //     font-size: 13px;
-            // }
-            // &:-ms-input-placeholder {
-            //     color: peachpuff;
-            //     font-size: 13px;
-            // }
-            // &::placeholder {
-            //     color: peachpuff;
-            //     font-size: 13px;
-            // }
-        }
-        input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-            // font-size: 1.4rem;
-        }
-        select {
-            // font-size: 1.4rem;
-        }
-        select:invalid { 
-            color: gray; 
-            background-color: #ffffff;
-        }
-        input[type=checkbox] {
-            width: auto;
-            position: relative;
-            top: 3px;
-        }
-        input[type=submit] {
-            background-color: #6d8eb6;
-            font-size: 1.8rem;
-            color: #ffffff;
-            width: auto;
-            border-radius: unset;
-            border-width: 0;
-            padding: 5px 30px;
-        }
-        .checkable_block {
-            padding: 10px 0;
-            .checkable_item {
-                color: #707070;
-                text-align: left;
-                width: 88%;
-                margin: auto;
-                font-size: 0.8rem;
-                input {
-                    margin-right: 5px;
-                }
-            }
-        }
-        .remark {
-            color: #5baccd;
-            font-size: 0.8rem;
-            padding: 10px 0 20px;
-        }
-    }
-    .banner-free-trial-banner {
+    .container {
+      max-width: 1320px;
+      .mobile {
         display: none;
-        @media screen and (max-width: $mid-width) {
-            display: block;
+      }
+      @media screen and (max-width: $max-width) {
+        padding: 0;
+      }
+      @media screen and (max-width: $small-width) {
+        .desktop {
+          display: none;
         }
+        .mobile {
+          display: block;
+        }
+      }
     }
-    .free-trial-banner {
-        background-color: #69aea1;
-        color: #ffffff;
-        @media screen and (max-width: $mid-width) {
-            display: none;
-        }
+    .banner-hero {
+      position: absolute;
+      left: -10px;
+      width: 100%;
+      z-index: 700;
+      img {
+        width: 515px;
+      }
+      @media screen and (max-width: $mid-width) {
+        position: relative;
+        left: 320px;
+        width: 515px;
+      }
+      @media screen and (max-width: 800px) {
+        left: 256px;
+      }
+    }
+    .banner-tagline {
+      position: absolute;
+      top: 186px;
+      z-index: 500;
+      img {
+        width: 600px;
+      }
+    }
+    .row {
+      position: relative;
+      height: 593px;
+      @media screen and (max-width: $mid-width) {
+        display: inline-block;
+      }
+    }
+    @media screen and (max-width: 1320px) {
+      .banner-tagline {
+        top: 300px;
         img {
-            width: 100%;
+          width: 450px;
         }
+      }
     }
-    .fda {
-        max-width: $mid-width;
-        margin: 0 auto;
-        padding: 1.5rem 0 4rem; 
-        .description {
-            p {
-                font-size: 1.4rem;
-                text-align: justify;
-                text-align-last: center;
-                padding: 38px;
-                vertical-align: middle;
-            }            
-        }
-        .fa-sort-down {
-            font-size: 3rem;
-            color: #5baccd;
-            position: relative;
-            left: 18px;
-        }
+  }
+  form {
+    background-image: url("../public/images/form_pattern_top_left.png"),
+      url("../public/images/form_pattern_bottom_right.png");
+    background-repeat: no-repeat;
+    background-size: auto 28%;
+    background-position-x: left, right;
+    background-position-y: top, bottom;
+    border-radius: 25px;
+    position: absolute;
+    right: 10px;
+    width: 438px;
+    z-index: 1000;
+    // height: 674px;
+    background-color: #b6e5e6;
+
+    @media screen and (max-width: $mid-width) {
+      position: relative;
+      width: 100%;
+      border-radius: 0;
+      right: unset;
     }
 
-    .successful-case {
-        background-color: unset;
-        background-image: url('../public/images/treatment-section-3-bg.png');
-        background-size: 1150px;
-        background-position-x: -250px;
-        padding: 0 0 120px;
-        .container {
-            max-width: $mid-width;
-            margin: 0 auto;
-            .successful-case-img-block {
-                padding: 3rem 0;
-                @media screen and (max-width: 991px) {
-                    >div:nth-of-type(odd) {
-                        padding-bottom: 50px;
-                    }
-                }
-                img {
-                    width: 430px;
-                    @media screen and (max-width: $small-width) {
-                        width: 80%;
-                    }
-                }
-            }
-            .remark {
-                padding: 0 3rem;
-            }
-        }
+    .caption {
+      color: #6e90b8;
+      padding: 25px 28px 20px;
+      font-size: 2rem;
+      background-image: url(../public/images/menu_d_s.png);
+      background-repeat: no-repeat;
+      background-size: auto 85%;
+      background-position-x: right;
+      background-position-y: bottom;
     }
-
-    .hair-loss-type {
-        background-color: unset;
-        background-image: url('../public/images/treatment-section-4-bg.png');
-        background-size: 1150px;
-        background-position-x: 1020px;
-        padding: 3rem 0 0;
+    input,
+    select {
+      width: 88%;
+      border-color: #dedede;
+      border-style: solid;
+      border-width: 1px;
+      padding: 5px 14px;
+      margin-bottom: 9px;
+      border-radius: 5px;
+      font-size: 1rem;
+      // &::-webkit-input-placeholder {
+      //     color: peachpuff;
+      //     font-size: 13px;
+      // }
+      // &::-moz-placeholder {
+      //     color: peachpuff;
+      //     font-size: 13px;
+      // }
+      // &:-ms-input-placeholder {
+      //     color: peachpuff;
+      //     font-size: 13px;
+      // }
+      // &::placeholder {
+      //     color: peachpuff;
+      //     font-size: 13px;
+      // }
+    }
+    input::-webkit-input-placeholder {
+      /* Chrome/Opera/Safari */
+      // font-size: 1.4rem;
+    }
+    select {
+      // font-size: 1.4rem;
+    }
+    select:invalid {
+      color: gray;
+      background-color: #ffffff;
+    }
+    input[type="checkbox"] {
+      width: auto;
+      position: relative;
+      top: 3px;
+    }
+    input[type="button"] {
+      background-color: #6d8eb6;
+      font-size: 1.8rem;
+      color: #ffffff;
+      width: auto;
+      border-radius: unset;
+      border-width: 0;
+      padding: 5px 30px;
+    }
+    .shop-input,
+    .time-input {
+      width: 88%;
+      border-color: #dedede;
+      border-style: solid;
+      border-width: 1px;
+      padding: 1px 13px;
+      margin-bottom: 9px;
+      border-radius: 5px;
+      font-size: 1rem;
+      background-color: #fff;
+      text-align: left;
+      &:before {
+        border-bottom-style: none;
+      }
+    }
+    .date-input {
+      width: 88%;
+      border-color: #dedede;
+      border-style: solid;
+      border-width: 1px;
+      padding: 1px 13px;
+      margin-bottom: 9px;
+      border-radius: 5px;
+      font-size: 1rem;
+      background-color: #fff;
+      text-align: left;
+      .MuiInput-underline {
+        &:before {
+          border-bottom-style: none;
+        }
+        input {
+          margin-bottom: 0;
+          border: 0;
+          padding-left: 0;
+        }
+      }
+    }
+    .checkable_block {
+      padding: 10px 0;
+      .checkable_item {
+        color: #707070;
+        text-align: left;
+        width: 88%;
+        margin: auto;
+        font-size: 0.8rem;
+        input {
+          margin-right: 5px;
+        }
+      }
+    }
+    .remark {
+      color: #5baccd;
+      font-size: 0.8rem;
+      padding: 10px 0 20px;
+    }
+  }
+  .banner-free-trial-banner {
+    display: none;
+    @media screen and (max-width: $mid-width) {
+      display: block;
+    }
+  }
+  .free-trial-banner {
+    background-color: #69aea1;
+    color: #ffffff;
+    @media screen and (max-width: $mid-width) {
+      display: none;
+    }
+    img {
+      width: 100%;
+    }
+  }
+  .fda {
+    max-width: $mid-width;
+    margin: 0 auto;
+    padding: 1.5rem 0 4rem;
+    .description {
+      p {
+        font-size: 1.4rem;
         text-align: justify;
         text-align-last: center;
-        .container {
-            max-width: $mid-width;
-            margin: 0 auto;         
-            .hair-loss-block {
-                padding: 0 15px 50px;
-                @media screen and (max-width: 991px) {                    
-                    &:nth-of-type(odd) {
-                        padding: 0 40px 50px 80px;
-                        @media screen and (max-width: $small-width) {                    
-                            padding: 0 40px 50px 40px;
-                        }
-                    }
-                    &:nth-of-type(even) {
-                        padding: 0 80px 50px 40px;
-                        @media screen and (max-width: $small-width) {                    
-                            padding: 0 40px 50px 40px;
-                        }
-                    }
-                }                                
-                .number {
-                    float: left;
-                    width: 50px;
-                }
-                .head {
-                    width: 100%;
-                    padding: 0 40px 20px;
-                }
-            }
-        }
+        padding: 38px;
+        vertical-align: middle;
+      }
     }
-
-    .faq {        
-        padding: 2rem 0;
-        background-image: url('../public/images/faq-bg.png');
-        background-size: 100%;
-        background-position: bottom;
-        background-repeat: no-repeat;
-        text-align: left;     
-
-        >ul {
-            max-width: $medium-width;
-            margin: 0 auto;
-            list-style: none;
-            padding: 0;
-            color: #707070;        
-            @media screen and (max-width: $medium-width) {
-                padding: 0 30px;
-            }    
-            >li {
-                position: relative;
-                cursor: pointer;
-                .question {
-                    background-color: #e0ebd3;
-                    font-size: 1.2rem;
-                    padding: 0.7rem 1.2rem;
-                    margin: 0 0 2px;
-                }
-                .answer {
-                    display: none;
-                    font-size: 1.2rem;
-                    padding: 0.6rem 1.8rem;
-                    p {
-                        margin: 0 0 18px;
-                    }
-                }                
-                i {
-                    position: absolute;
-                    color: #6e90b8;
-                    font-size: 1.2rem;
-                    z-index: 100;
-                    top: 15px;
-                    right: 10px;
-                }
-                &.active {
-                    .question {
-                        background-color: #c9e8d7;
-                    }
-                    .answer {
-                        display: block;
-                    }
-                    i {
-                        right: 8px;
-                    }
-                }
-            }
-        }
-        
+    .fa-sort-down {
+      font-size: 3rem;
+      color: #5baccd;
+      position: relative;
+      left: 18px;
     }
+  }
+
+  .successful-case {
+    background-color: unset;
+    background-image: url("../public/images/treatment-section-3-bg.png");
+    background-size: 1150px;
+    background-position-x: -250px;
+    padding: 0 0 120px;
+    .container {
+      max-width: $mid-width;
+      margin: 0 auto;
+      .successful-case-img-block {
+        padding: 3rem 0;
+        @media screen and (max-width: 991px) {
+          > div:nth-of-type(odd) {
+            padding-bottom: 50px;
+          }
+        }
+        img {
+          width: 430px;
+          @media screen and (max-width: $small-width) {
+            width: 80%;
+          }
+        }
+      }
+      .remark {
+        padding: 0 3rem;
+      }
+    }
+  }
+
+  .hair-loss-type {
+    background-color: unset;
+    background-image: url("../public/images/treatment-section-4-bg.png");
+    background-size: 1150px;
+    background-position-x: 1020px;
+    padding: 3rem 0 0;
+    text-align: justify;
+    text-align-last: center;
+    .container {
+      max-width: $mid-width;
+      margin: 0 auto;
+      .hair-loss-block {
+        padding: 0 15px 50px;
+        @media screen and (max-width: 991px) {
+          &:nth-of-type(odd) {
+            padding: 0 40px 50px 80px;
+            @media screen and (max-width: $small-width) {
+              padding: 0 40px 50px 40px;
+            }
+          }
+          &:nth-of-type(even) {
+            padding: 0 80px 50px 40px;
+            @media screen and (max-width: $small-width) {
+              padding: 0 40px 50px 40px;
+            }
+          }
+        }
+        .number {
+          float: left;
+          width: 50px;
+        }
+        .head {
+          width: 100%;
+          padding: 0 40px 20px;
+        }
+      }
+    }
+  }
+
+  .faq {
+    padding: 2rem 0;
+    background-image: url("../public/images/faq-bg.png");
+    background-size: 100%;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    text-align: left;
+
+    > ul {
+      max-width: $medium-width;
+      margin: 0 auto;
+      list-style: none;
+      padding: 0;
+      color: #707070;
+      @media screen and (max-width: $medium-width) {
+        padding: 0 30px;
+      }
+      > li {
+        position: relative;
+        cursor: pointer;
+        .question {
+          background-color: #e0ebd3;
+          font-size: 1.2rem;
+          padding: 0.7rem 1.2rem;
+          margin: 0 0 2px;
+        }
+        .answer {
+          display: none;
+          font-size: 1.2rem;
+          padding: 0.6rem 1.8rem;
+          p {
+            margin: 0 0 18px;
+          }
+        }
+        i {
+          position: absolute;
+          color: #6e90b8;
+          font-size: 1.2rem;
+          z-index: 100;
+          top: 15px;
+          right: 10px;
+        }
+        &.active {
+          .question {
+            background-color: #c9e8d7;
+          }
+          .answer {
+            display: block;
+          }
+          i {
+            right: 8px;
+          }
+        }
+      }
+    }
+  }
 }

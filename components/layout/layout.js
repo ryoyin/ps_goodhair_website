@@ -1,6 +1,7 @@
+import React from 'react';
 import Head from 'next/head'
 import Link from 'next/link'
-
+import {SystemContext,SystemProvider} from '../../utils/SystemProvider';
 const Layout = (props) => {
     
     const currentPage = props.currentPage
@@ -9,6 +10,7 @@ const Layout = (props) => {
 
     return (        
         <>
+        <SystemProvider>
             <Head> 
                 <meta charSet="utf-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -93,6 +95,7 @@ const Layout = (props) => {
                 <div className="copyright">COPYRIGHT©PERFECT MEDICAL LIMITED 2020 All Right RESERVED.</div>
             </footer>
             <script src="/js/bootstrap.bundle.min.js"></script>
+        </SystemProvider>
         </>
     )
 }
