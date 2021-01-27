@@ -1,5 +1,5 @@
 import Link from 'next/link'
-
+import Form from '../form/form'
 const HairKnowledgeLayout = (props) => {
     const gender = props.gender
     const tn = props.translation.content
@@ -17,7 +17,8 @@ const HairKnowledgeLayout = (props) => {
                             <div className="mobile">
                                 <div className="banner-mobile-hero"><img src="/images/m_women_mobile_banner.png" /></div>
                             </div>
-                            <form>
+                            <Form />
+                            {/* <form>
                                 <div className="caption">一分鐘線上自助登記 </div>
                                 <input type="text" name="name" placeholder="姓名" required />
                                 <input type="text" name="tel" placeholder="手提電話" required />
@@ -55,7 +56,7 @@ const HairKnowledgeLayout = (props) => {
 
                                 <div className="remark">* 療程效果會因個人之皮膚、身體狀況等因素而有所不同。</div>
 
-                            </form>
+                            </form> */}
                         </div>
                     </div>
                     <div className="free-trial-banner">
