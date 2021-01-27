@@ -1,8 +1,10 @@
+import loadCustomRoutes from 'next/dist/lib/load-custom-routes'
 import Link from 'next/link'
 import Form from '../form/form'
 const HairKnowledgeLayout = (props) => {
     const gender = props.gender
     const tn = props.translation.content
+    const hairLossCases = props.translation.content.hair_loss
     return (
         <main className={`treatment treatment-${gender}`}>
             <div className="banner">
@@ -48,7 +50,7 @@ const HairKnowledgeLayout = (props) => {
                                     </div>
                                     <div className="checkable_item">
                                         <input type="checkbox" name="news" />
-                                    本人本人願意日後繼續收取Good Hair之產品資料及宣傳資訊。如選擇拒絕接收，本人同時將不會收到貴公司的任何禮品、折扣及其他優惠資訊。
+                                    本人願意日後繼續收取Good Hair之產品資料及宣傳資訊。如選擇拒絕接收，本人同時將不會收到貴公司的任何禮品、折扣及其他優惠資訊。
                                     </div>
                                 </div>
 
@@ -152,7 +154,67 @@ const HairKnowledgeLayout = (props) => {
                 </div>
             </div>
 
-            <div className="section hair-loss-type">
+            {gender == 'male' ? (
+                <>
+                    {
+                        hairLossCases.map((hairLossCase) => (
+                            <div className="section hair-loss-type">
+                                <div className="container">
+                                    <div className="row">
+                                        <div className="col-lg-3 col-md-6 hair-loss-block" key={hairLossCase.id}>
+                                            <img src={hairLossCase.numpic} className="number" />
+                                            <img src={hairLossCase.pic} className="head" />
+                                            <div>
+                                                <p>{hairLossCase.name}</p>
+                                                <p>{hairLossCase.description}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </>
+            ) : (
+                    <>
+                        {
+                            hairLossCases.map((hairLossCase) => (
+                                <div className="section hair-loss-type">
+                                    <div className="container">
+                                        <div className="row">
+                                            <div className="col-lg-3 col-md-6 hair-loss-block" key={hairLossCase.id}>
+                                                <img src={hairLossCase.numpic} className="number" />
+                                                <img src={hairLossCase.pic} className="head" />
+                                                <div>
+                                                    <p>{hairLossCase.name}</p>
+                                                    <p>{hairLossCase.description}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))
+                        }
+                    </>
+
+                )
+            }
+            {/* <div className="section hair-loss-type">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-3 col-md-6 hair-loss-block" key={hairLoss.id}>
+                            <img src={hairLoss.numpic} className="number" />
+                            <img src={hairLoss.pic} className="head" />
+                            <div>
+                                <p>{hairLoss.name}</p>
+                                <p>{hairLoss.description}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> */}
+
+            {/* <div className="section hair-loss-type">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-3 col-md-6 hair-loss-block">
@@ -189,7 +251,7 @@ const HairKnowledgeLayout = (props) => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             <div className="section">
                 <div className="container">
@@ -201,7 +263,7 @@ const HairKnowledgeLayout = (props) => {
                 </div>
             </div>
 
-            <div className="faq">
+            <div className="faq" id="faq">
                 <ul>
                     <li>
                         <h2 className="question">甚麼是FDA防脫髮療程？</h2>
@@ -259,7 +321,7 @@ const HairKnowledgeLayout = (props) => {
                     </li>
                 </ul>
             </div>
-        </main>
+        </main >
     )
 }
 

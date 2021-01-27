@@ -1,4 +1,3 @@
-import React from 'react';
 import Head from 'next/head'
 import Link from 'next/link'
 import { SystemContext, SystemProvider } from '../../utils/SystemProvider';
@@ -48,7 +47,7 @@ const Layout = (props) => {
                                                 </Link>
                                             </li>
                                             <li className="nav-item">
-                                                <Link href={`/${gender}/hair-knowledge`}>
+                                                <Link href={`/${gender}/hair-knowledge/#faq`}>
                                                     <a className="nav-link">療程推介</a>
                                                 </Link>
                                                 {/* <ul className="nav-item-sub">
@@ -89,7 +88,7 @@ const Layout = (props) => {
                     </div>
                     <div className="footer-links">
                         <Link href="/contact"><a>關於我們</a></Link>
-                        <Link href="/contact"><a>門市地址</a></Link>
+                        <Link href="/contact/#address"><a>門市地址</a></Link>
                         <Link href="/privacy"><a>私隱政策</a></Link>
                         <Link href="/disclaimer"><a>免責條款</a></Link>
                     </div>

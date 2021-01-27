@@ -4,7 +4,7 @@ const ContactLayout = () => {
             <div className="banner">
                 <img src="/images/contact_us.jpg" />
             </div>
-            
+
             <div className="section">
                 <div className="row">
                     <div className="col-lg-12">歡迎聯絡我們，了解療程及服務詳情。</div>
@@ -18,10 +18,10 @@ const ContactLayout = () => {
                     <div className="col-lg-12">醫療級軟激光生髪科技，針對易脫髮的生長週期，以「止脫」為理念，專門解決大量脫髮問題，延長頭髮的壽命，平衡脫髮速度及生長速度。。</div>
                 </div>
             </div>
-        
+
             <div className="address">
                 <div className="row">
-                    <div className="col-lg-12">
+                    <div className="col-lg-12" id="address">
                         <img src="/images/contact-us-address.png" />
                     </div>
                 </div>
@@ -35,7 +35,7 @@ const ContactLayout = () => {
                     <span>時代廣場1座28樓全層</span>
                 </div>
             </div>
-            
+
         </main>
     )
 }
