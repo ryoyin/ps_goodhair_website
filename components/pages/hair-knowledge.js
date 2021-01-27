@@ -154,13 +154,14 @@ const HairKnowledgeLayout = (props) => {
                 </div>
             </div>
 
-            {gender == 'male' ? (
-                <>
-                    {
-                        hairLossCases.map((hairLossCase) => (
-                            <div className="section hair-loss-type">
-                                <div className="container">
-                                    <div className="row">
+
+            <div className="section hair-loss-type">
+                <div className="container">
+                    <div className="row">
+                        {gender == 'male' ? (
+                            <>
+                                {
+                                    hairLossCases.map((hairLossCase) => (
                                         <div className="col-lg-3 col-md-6 hair-loss-block" key={hairLossCase.id}>
                                             <img src={hairLossCase.numpic} className="number" />
                                             <img src={hairLossCase.pic} className="head" />
@@ -169,19 +170,14 @@ const HairKnowledgeLayout = (props) => {
                                                 <p>{hairLossCase.description}</p>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        ))
-                    }
-                </>
-            ) : (
-                    <>
-                        {
-                            hairLossCases.map((hairLossCase) => (
-                                <div className="section hair-loss-type">
-                                    <div className="container">
-                                        <div className="row">
+                                    )
+                                    )
+                                }
+                            </>
+                        ) : (
+                                <>
+                                    {
+                                        hairLossCases.map((hairLossCase) => (
                                             <div className="col-lg-3 col-md-6 hair-loss-block" key={hairLossCase.id}>
                                                 <img src={hairLossCase.numpic} className="number" />
                                                 <img src={hairLossCase.pic} className="head" />
@@ -190,15 +186,15 @@ const HairKnowledgeLayout = (props) => {
                                                     <p>{hairLossCase.description}</p>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))
-                        }
-                    </>
+                                        ))
+                                    }
+                                </>
 
-                )
-            }
+                            )
+                        }
+                    </div>
+                </div>
+            </div>
             {/* <div className="section hair-loss-type">
                 <div className="container">
                     <div className="row">
