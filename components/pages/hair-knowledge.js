@@ -181,23 +181,21 @@ const HairKnowledgeLayout = (props) => {
                                 }
                             </>
                         ) : (
-                                <>
-                                    {
-                                        hairLossCases.map((hairLossCase) => (
-                                            <div className="col-lg-3 col-md-6 hair-loss-block" key={hairLossCase.id}>
-                                                <img src={hairLossCase.numpic} className="number" />
-                                                <img src={hairLossCase.pic} className="head" />
-                                                <div>
-                                                    <p>{hairLossCase.name}</p>
-                                                    <p>{hairLossCase.description}</p>
-                                                </div>
+                            <>
+                                {
+                                    hairLossCases.map((hairLossCase) => (
+                                        <div className="col-lg-3 col-md-6 hair-loss-block" key={hairLossCase.id}>
+                                            <img src={hairLossCase.numpic} className="number" />
+                                            <img src={hairLossCase.pic} className="head" />
+                                            <div>
+                                                <p>{hairLossCase.name}</p>
+                                                <p>{hairLossCase.description}</p>
                                             </div>
-                                        ))
-                                    }
-                                </>
-
-                            )
-                        }
+                                        </div>
+                                    ))
+                                }
+                            </>
+                        )}
                     </div>
                 </div>
             </div>
