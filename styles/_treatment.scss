@@ -107,7 +107,7 @@
       position: absolute;
       left: -10px;
       width: 100%;
-      z-index: 700;
+      z-index: 3;
       img {
         width: 515px;
       }
@@ -123,7 +123,7 @@
     .banner-tagline {
       position: absolute;
       top: 186px;
-      z-index: 500;
+      z-index: 2;
       img {
         width: 600px;
       }
@@ -155,7 +155,7 @@
     position: absolute;
     right: 10px;
     width: 438px;
-    z-index: 1000;
+    z-index: 4;
     // height: 674px;
     background-color: #b6e5e6;
 
@@ -232,10 +232,19 @@
       margin-bottom: 9px;
       border-radius: 5px;
       font-size: 1rem;
+      font-family: NotoSansHK-Regular;
       background-color: #fff;
       text-align: left;
       &:before {
         border-bottom-style: none;
+      }
+      .Mui-disabled {
+        color: gray !important;
+      }
+      .MuiSelect-select {
+        &:focus {
+          background-color: #fff;
+        }
       }
     }
     .date-input {
@@ -247,6 +256,7 @@
       margin-bottom: 9px;
       border-radius: 5px;
       font-size: 1rem;
+      font-family: NotoSansHK-Regular;
       background-color: #fff;
       text-align: left;
       .MuiInput-underline {
@@ -258,6 +268,9 @@
           border: 0;
           padding-left: 0;
         }
+      }
+      .Mui-disabled {
+        color: gray !important;
       }
     }
     .checkable_block {
@@ -429,7 +442,7 @@
           position: absolute;
           color: #6e90b8;
           font-size: 1.2rem;
-          z-index: 100;
+          z-index: 1;
           top: 15px;
           right: 10px;
         }

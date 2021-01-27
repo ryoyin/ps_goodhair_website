@@ -4,9 +4,10 @@ import Link from 'next/link';
 import {submitForm } from '../../utils/common';
 import { SystemContext } from '../../utils/SystemProvider';
 import MyTimeDateShopComponent from '../common/MyTimeDateShopComponent';
-import {MenuItem, Select } from '@material-ui/core';
+import {MenuItem, Select, InputLabel } from '@material-ui/core';
 import enLocale from "date-fns/locale/en-US";
 import zhLocale from "date-fns/locale/zh-TW";
+import MyShop from "../common/MyShop";
 
 const Form = () => {
     const system = useContext(SystemContext);
@@ -15,7 +16,8 @@ const Form = () => {
         className: 'shop-input',
         placeholder: "選擇療程分店",
         name: 'center',
-        required: true
+        underline: 'none',
+        // required: true
     }
     const time = {
         className: 'time-input',
@@ -39,6 +41,15 @@ const Form = () => {
     const [myTime, setMyTime] = useState('');
     const [isPrivacy, setIsPrivacy] = useState(false);
     const [isAcceptPromote, setIsAcceptPromote] = useState(false);
+
+    console.log('myName:'+myName);
+    console.log('myPhone'+myPhone);
+    console.log('myMail'+myMail);
+    console.log('myShop:'+myShop);
+    console.log('myDate:'+myDate);
+    console.log('myTime:'+myTime);
+    console.log('isPrivacy:'+isPrivacy);
+    // console.log(system.shopList);
 
     const submit = () => {
         const checkingBuilder = (condition, msg) => { return { condition: condition, msg: msg } }
@@ -114,12 +125,19 @@ const Form = () => {
             <select name="time" required>
                 <option value="" disabled selected hidden> 選擇療程時間 </option>
             </select> */}
-             <Select {...shop} value={myShop} onChange={x => { setMyShop(x.target.value); setMyTime(''); setMyDate(null); }} displayEmpty={true} >
-                <MenuItem value={''} disabled>選擇療程分店</MenuItem>
+             {/* <Select {...shop} value={myShop} onChange={x => { setMyShop(x.target.value); setMyTime(''); setMyDate(null); }} displayEmpty={true}>
+                <MenuItem value={''} disabled>{shop.placeholder}</MenuItem>
                 {
                     system.shopList?.map((x, idx) => <MenuItem key={'shop_' + idx} value={x} >{x.name}</MenuItem>)
                 }
-            </Select>
+            </Select> */}
+            <MyShop shop={shop} myShop={myShop} setMyShop={setMyShop} setMyDate={setMyDate} setMyTime={setMyTime} system={system} />
+            {/* <select name="center" value={myShop} onChange={x => { setMyShop(x.target.value); setMyTime(''); setMyDate(null); }} required>
+                <option value="" disabled> 選擇療程分店 </option>
+                {
+                    system.shopList?.map((x, idx) => <option key={'shop_' + idx} value={x}>{x.name}</option>)
+                }
+            </select>  */}
             <MyTimeDateShopComponent
                 className={date.className}
                 placeholder={date.placeholder}

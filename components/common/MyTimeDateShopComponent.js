@@ -22,8 +22,8 @@ export default function MyTimeDateShopComponent(props) {
                 placeholder={myShop ? placeholder : '請先選擇分店'}
                 myDate={myDate} 
                 myShop={myShop}
-                dateFormat={dateFormat}
                 disabled={!myShop}
+                dateFormat={dateFormat}
                 onChange={date => { setMyDate(format(date, dateFormat)); setMyTime('') }}
                 shouldDisableDate={(currentDate) => {
                     const enableToday = isToday(currentDate);
@@ -38,7 +38,7 @@ export default function MyTimeDateShopComponent(props) {
             />
 
 
-            <Select {...timeConfig} value={myTime} disabled={!myDate} onChange={x => setMyTime(x.target.value)} displayEmpty={true} >
+            <Select {...timeConfig} value={myTime} disabled={!myDate} onChange={x => setMyTime(x.target.value)} displayEmpty={true} disableUnderline >
                 <MenuItem value={''}>{!!myDate ? (dayTimelist.length > 0 ? timeConfig.placeholder : '已過辨工時間') : '請先選擇日期'}</MenuItem>
                 {dayTimelist?.map((x, idx) => <MenuItem key={'time_' + idx} value={x} >{getMyList(myShop, today)[x]}</MenuItem>)}
             </Select>

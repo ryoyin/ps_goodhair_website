@@ -1,0 +1,30 @@
+version: "3.8"
+services:
+  web:
+    image: nginx:alpine
+    container_name: nginx2
+    volumes:
+      - ./api:/goodHair
+      - ./api/ngnix.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "80:80"
+    environment:
+      - NGINX_HOST=test.com
+      - NGINX_PORT=80
+    links:
+      - php
+  php:
+    image: php:7-fpm
+    container_name: php2
+    volumes:
+      - ./api:/goodHair
+  nextjs:
+    image: node:12
+    container_name: ps-website-gh
+    # ports:
+    #   - 3000
+    volumes:
+      - ./:/usr/src/app
+      - ./.test_next:/usr/src/app/.next
+    working_dir: /usr/src/app
+    command: ["npm", "run", "dev"]
