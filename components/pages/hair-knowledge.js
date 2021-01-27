@@ -101,19 +101,19 @@ const HairKnowledgeLayout = (props) => {
                 </div>
             </div>
 
-            <div className="content fda">
+            <div className="content fda" id="fda">
                 <div className="container">
-                    <div className="row">
-                        <div className="col-sm-4 info"><img src="/images/treatment-1-fda-step1.png" /></div>
-                        <div className="col-sm-8 description"><p>醫學軟激光穿透表層細胞，到達毛囊根部，而毛囊根部含有豐富的黑色素，能夠強烈地吸收這個波長軟激光能量，令頭髮及毛囊保持健康生長，防止脫髮。</p></div>
+                    <div className="row align-items-center">
+                        <div className="col-md-4 info"><img src="/images/treatment-1-fda-step1.png" /></div>
+                        <div className="col-md-8 description"><p>醫學軟激光穿透表層細胞，到達毛囊根部，而毛囊根部含有豐富的黑色素，能夠強烈地吸收這個波長軟激光能量，令頭髮及毛囊保持健康生長，防止脫髮。</p></div>
                     </div>
                     <div className="row">
-                        <div className="col-sm-4"><i className="fas fa-sort-down"></i></div>
-                        <div className="col-sm-8"></div>
+                        <div className="col-md-4"><i className="fas fa-sort-down"></i></div>
+                        <div className="col-md-8"></div>
                     </div>
-                    <div className="row">
-                        <div className="col-sm-4 info"><img src="/images/treatment-1-fda-step2.png" /></div>
-                        <div className="col-sm-8 description"><p>滲透獨家活養精華，提高毛囊養份，刺激毛囊生長，強化頭皮及頭髮健康。完成療程後，髮根變得強韌，脫髮情況大大減少，毛囊細胞及頭髮回復濃密健康，即時年輕。</p></div>
+                    <div className="row align-items-center">
+                        <div className="col-md-4 info"><img src="/images/treatment-1-fda-step2.png" /></div>
+                        <div className="col-md-8 description"><p>滲透獨家活養精華，提高毛囊養份，刺激毛囊生長，強化頭皮及頭髮健康。完成療程後，髮根變得強韌，脫髮情況大大減少，毛囊細胞及頭髮回復濃密健康，即時年輕。</p></div>
                     </div>
                 </div>
             </div>
@@ -162,7 +162,7 @@ const HairKnowledgeLayout = (props) => {
                             <>
                                 {
                                     hairLossCases.map((hairLossCase, idx) => (
-                                        <div 
+                                        <div
                                             className={
                                                 'col-lg-4 col-md-6 hair-loss-block '
                                                 + (idx == 3 ? 'offset-lg-1' : '')
@@ -181,21 +181,21 @@ const HairKnowledgeLayout = (props) => {
                                 }
                             </>
                         ) : (
-                            <>
-                                {
-                                    hairLossCases.map((hairLossCase) => (
-                                        <div className="col-lg-3 col-md-6 hair-loss-block" key={hairLossCase.id}>
-                                            <img src={hairLossCase.numpic} className="number" />
-                                            <img src={hairLossCase.pic} className="head" />
-                                            <div>
-                                                <p>{hairLossCase.name}</p>
-                                                <p>{hairLossCase.description}</p>
+                                <>
+                                    {
+                                        hairLossCases.map((hairLossCase) => (
+                                            <div className="col-lg-3 col-md-6 hair-loss-block" key={hairLossCase.id}>
+                                                <img src={hairLossCase.numpic} className="number" />
+                                                <img src={hairLossCase.pic} className="head" />
+                                                <div>
+                                                    <p>{hairLossCase.name}</p>
+                                                    <p>{hairLossCase.description}</p>
+                                                </div>
                                             </div>
-                                        </div>
-                                    ))
-                                }
-                            </>
-                        )}
+                                        ))
+                                    }
+                                </>
+                            )}
                     </div>
                 </div>
             </div>
@@ -263,7 +263,7 @@ const HairKnowledgeLayout = (props) => {
                 </div>
             </div>
 
-            <div className="faq" id="faq">
+            <div className="faq">
                 <ul>
                     <li>
                         <h2 className="question">甚麼是FDA防脫髮療程？</h2>

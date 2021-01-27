@@ -47,7 +47,7 @@ const Layout = (props) => {
                                                 </Link>
                                             </li>
                                             <li className="nav-item">
-                                                <Link href={`/${gender}/hair-knowledge/#faq`}>
+                                                <Link href={`/${gender}/hair-knowledge/#fda`}>
                                                     <a className="nav-link">療程推介</a>
                                                 </Link>
                                                 {/* <ul className="nav-item-sub">
