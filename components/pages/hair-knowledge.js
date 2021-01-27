@@ -161,8 +161,15 @@ const HairKnowledgeLayout = (props) => {
                         {gender == 'male' ? (
                             <>
                                 {
-                                    hairLossCases.map((hairLossCase) => (
-                                        <div className="col-lg-3 col-md-6 hair-loss-block" key={hairLossCase.id}>
+                                    hairLossCases.map((hairLossCase, idx) => (
+                                        <div 
+                                            className={
+                                                'col-lg-4 col-md-6 hair-loss-block '
+                                                + (idx == 3 ? 'offset-lg-1' : '')
+                                                + (idx == 4 ? 'offset-lg-2 offset-md-3' : '')
+                                            }
+                                            key={hairLossCase.id}
+                                        >
                                             <img src={hairLossCase.numpic} className="number" />
                                             <img src={hairLossCase.pic} className="head" />
                                             <div>
@@ -170,8 +177,7 @@ const HairKnowledgeLayout = (props) => {
                                                 <p>{hairLossCase.description}</p>
                                             </div>
                                         </div>
-                                    )
-                                    )
+                                    ))
                                 }
                             </>
                         ) : (
