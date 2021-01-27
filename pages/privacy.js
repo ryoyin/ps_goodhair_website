@@ -1,14 +1,27 @@
 import PrivacyLayout from '../components/pages/privacy'
-import { getTDK } from '@/data/seo/tdk'
-const Privacy = () => {
+import { getTranslation } from '@/data/privacy'
+import { getGender } from '@/functions/common'
+import Layout from '@/components/layout/layout'
+const Privacy = (props) => {
+    const currentPage = props.currentPage
+    const gender = props.gender
+    const translation = props.translation
     return (
-        <PrivacyLayout />
+        <Layout
+            currentPage={currentPage}
+            gender={gender}
+            translation={translation}
+        >
+            <PrivacyLayout />
+        </Layout>
     )
 }
 Privacy.getInitialProps = async () => {
-    const tdk = await getTDK()
+    const currentPage = 'privacy'
+    const gender = getGender(currentPage)
+    const translation = await getTranslation()
     return {
-        tdk: tdk.Privacy
+        translation, gender, currentPage
     }
 }
 
