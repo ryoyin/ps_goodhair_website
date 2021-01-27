@@ -41,7 +41,7 @@ const Header = (props) => {
                                         <a className="nav-link" aria-current="page" href="/">主頁</a>
                                     </li>
                                     <li className="nav-item">
-                                        <Link prefetch as={`/${gender}/hair-knowledge`} href={`/${gender}/hair-knowledge`}>
+                                        <Link href={`/${gender}/hair-knowledge`}>
                                             <a className="nav-link">認識頭髮</a>
                                         </Link>
                                     </li>
