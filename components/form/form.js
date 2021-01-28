@@ -11,7 +11,6 @@ import MyShop from "../common/MyShop";
 
 const Form = () => {
     const system = useContext(SystemContext);
-    console.log(system);
     const shop = {
         className: 'shop-input',
         placeholder: "選擇療程分店",
@@ -42,14 +41,6 @@ const Form = () => {
     const [isPrivacy, setIsPrivacy] = useState(false);
     const [isAcceptPromote, setIsAcceptPromote] = useState(false);
 
-    console.log('myName:'+myName);
-    console.log('myPhone'+myPhone);
-    console.log('myMail'+myMail);
-    console.log('myShop:'+myShop);
-    console.log('myDate:'+myDate);
-    console.log('myTime:'+myTime);
-    console.log('isPrivacy:'+isPrivacy);
-    // console.log(system.shopList);
 
     const submit = () => {
         const checkingBuilder = (condition, msg) => { return { condition: condition, msg: msg } }
@@ -106,7 +97,7 @@ const Form = () => {
             Reserve1: '',
             Reserve2: '',
         }).then((x) => {
-            // router.push(window.location.origin + '/thankyou');
+            router.push(window.location.origin + '/thankyou');
         }).catch(x => alert('系統錯誤，請稍後再試。'))
     }
 
