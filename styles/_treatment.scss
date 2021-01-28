@@ -346,6 +346,9 @@
     background-size: 1150px;
     background-position-x: -250px;
     padding: 0 0 120px;
+    @media screen and (max-width: $small-width) {
+      background-size: 700px;
+    }
     .container {
       max-width: $mid-width;
       margin: 0 auto;
@@ -404,12 +407,22 @@
           }
         }
         .number {
-          float: left;
-          width: 50px;
+          img {
+            float: left;
+            width: 50px;
+          }
         }
         .head {
-          width: 100%;
-          padding: 0 40px 20px;
+          @media screen and (max-width: $small-width) {
+            clear: both;
+          }
+          img {
+            width: 100%;
+            padding: 0 40px 20px;
+            @media screen and (max-width: $small-width) {
+              width: 80%;
+            }
+          }
         }
       }
     }

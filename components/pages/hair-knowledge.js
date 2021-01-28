@@ -170,8 +170,8 @@ const HairKnowledgeLayout = (props) => {
                                             }
                                             key={hairLossCase.id}
                                         >
-                                            <img src={hairLossCase.numpic} className="number" />
-                                            <img src={hairLossCase.pic} className="head" />
+                                            <div className="number"><img src={hairLossCase.numpic} /></div>
+                                            <div className="head"><img src={hairLossCase.pic} /></div>
                                             <div>
                                                 <p>{hairLossCase.name}</p>
                                                 <p>{hairLossCase.description}</p>
@@ -185,8 +185,8 @@ const HairKnowledgeLayout = (props) => {
                                     {
                                         hairLossCases.map((hairLossCase) => (
                                             <div className="col-lg-3 col-md-6 hair-loss-block" key={hairLossCase.id}>
-                                                <img src={hairLossCase.numpic} className="number" />
-                                                <img src={hairLossCase.pic} className="head" />
+                                                <div className="number"><img src={hairLossCase.numpic} /></div>
+                                                <div className="head"><img src={hairLossCase.pic} /></div>
                                                 <div>
                                                     <p>{hairLossCase.name}</p>
                                                     <p>{hairLossCase.description}</p>
@@ -199,61 +199,8 @@ const HairKnowledgeLayout = (props) => {
                     </div>
                 </div>
             </div>
-            {/* <div className="section hair-loss-type">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-3 col-md-6 hair-loss-block" key={hairLoss.id}>
-                            <img src={hairLoss.numpic} className="number" />
-                            <img src={hairLoss.pic} className="head" />
-                            <div>
-                                <p>{hairLoss.name}</p>
-                                <p>{hairLoss.description}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> */}
 
-            {/* <div className="section hair-loss-type">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-3 col-md-6 hair-loss-block">
-                            <img src="/images/treatment-hair-loss-type-num1.png" className="number" />
-                            <img src="/images/treatment-hair-loss-type-1.png" className="head" />
-                            <div>
-                                <p>脂溢性禿髮</p>
-                                <p>前額兩側及頭頂的頭髮對稱地變得稀疏及幼細。頭油多，阻塞毛孔，皮脂積存在毛囊，引起發炎，生長期的頭髮變成靜止期，造成脫髮。</p>
-                            </div>
-                        </div>
-                        <div className="col-lg-3 col-md-6 hair-loss-block">
-                            <img src="/images/treatment-hair-loss-type-num2.png" className="number" />
-                            <img src="/images/treatment-hair-loss-type-2.png" className="head" />
-                            <div>
-                                <p>Ｍ字型脫髮</p>
-                                <p>前額髮線開始稍微向後移，情況嚴重時延至後枕。</p>
-                            </div>
-                        </div>
-                        <div className="col-lg-3 col-md-6 hair-loss-block">
-                            <img src="/images/treatment-hair-loss-type-num3.png" className="number" />
-                            <img src="/images/treatment-hair-loss-type-3.png" className="head" />
-                            <div>
-                                <p>普及性稀疏</p>
-                                <p>壓力令頭油過多，緊張令頭蓋肌肉拉緊，影響血液循環，導致頭頂之頭髮稀疏及脫髮，通常會造成禿頭。</p>
-                            </div>
-                        </div>
-                        <div className="col-lg-3 col-md-6 hair-loss-block">
-                            <img src="/images/treatment-hair-loss-type-num4.png" className="number" />
-                            <img src="/images/treatment-hair-loss-type-4.png" className="head" />
-                            <div>
-                                <p>雄性脫髮</p>
-                                <p>女性常見脫髮原因之一，一般都頭髮變得稀疏，不會完全禿頭。一般於 20-30歲開始，多源於遺傳。</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> */}
-
-            <div className="section">
+            {/*<div className="section">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
@@ -320,7 +267,7 @@ const HairKnowledgeLayout = (props) => {
                         <i className="fas fa-caret-right"></i>
                     </li>
                 </ul>
-            </div>
+            </div> */}
         </main >
     )
 }
