@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import { SystemContext, SystemProvider } from '../../utils/SystemProvider';
@@ -6,6 +7,38 @@ const Layout = (props) => {
     const currentPage = props.currentPage
     const gender = props.gender
     const tdk = props.translation.tdk
+
+    const genderSwitcher = useRef()
+    const [showGenderSwicher, setGenderSwitcher] = useState(false);
+
+    let genderSwitcherLink = `/male/hair-knowledge/`
+    let genderSwitcherImage = `/images/d_male_switch_btn.png`
+
+    if(gender == 'male') {
+        genderSwitcherLink = `/female/hair-knowledge/`
+        genderSwitcherImage = `/images/d_female_switch_btn.png`
+    }
+
+    const handleScroll = () => {
+        let position = window.scrollY
+        let width = window.innerWidth
+        let top = 1200
+        
+        if(width > 940) {
+            top = 400
+        }
+
+        if(position > top) {            
+            setGenderSwitcher(true)
+        } else {
+            setGenderSwitcher(false)
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    });
 
     return (
         <>
@@ -42,19 +75,19 @@ const Layout = (props) => {
                                                 <a className="nav-link" aria-current="page" href="/">主頁</a>
                                             </li>
                                             <li className="nav-item">
-                                                <Link href={`/${gender}/hair-knowledge`}>
+                                                <Link href={`/${gender}/hair-knowledge/`}>
                                                     <a className="nav-link">認識頭髮</a>
                                                 </Link>
                                             </li>
                                             <li className="nav-item">
-                                                <Link href={`/${gender}/hair-knowledge/#fda`}>
+                                                <Link href={`/${gender}/hair-knowledge/#fda-anchor`}>
                                                     <a className="nav-link">療程推介</a>
                                                 </Link>
                                                 {/* <ul className="nav-item-sub">
-                                            <li className="arrow-up"><i className="fas fa-angle-up"></i></li>
-                                            <li><a href="#">123</a></li>
-                                            <li><a href="#">456</a></li>
-                                        </ul> */}
+                                                        <li className="arrow-up"><i className="fas fa-angle-up"></i></li>
+                                                        <li><a href="#">123</a></li>
+                                                        <li><a href="#">456</a></li>
+                                                    </ul> */}
                                             </li>
                                         </>
                                     )}
@@ -62,7 +95,7 @@ const Layout = (props) => {
                                 <div className="d-flex lang-bar">
                                     <a href="/">繁</a>
                                     {/* <a href="/">简</a>
-                                <a href="/">EN</a> */}
+                                        <a href="/">EN</a> */}
                                 </div>
                             </div>
                         </div>
@@ -70,11 +103,14 @@ const Layout = (props) => {
                     </nav>
                 </header>
 
-                <Link href='/'>
-                    <a id="gender-switcher">
-                        <img src="/images/d_man_switch_btn.png" alt="Good Hair Logo" />
-                    </a>
-                </Link>
+                {(currentPage == 'index') ? '' : (
+                    showGenderSwicher ? (
+                        <Link href={genderSwitcherLink}>
+                            <a id="gender-switcher">
+                                <img src={genderSwitcherImage} alt="Good Hair Logo" />
+                            </a>
+                        </Link>) : ''
+                )}
 
                 {props.children}
 
@@ -87,10 +123,10 @@ const Layout = (props) => {
                         <i className="pss ps-map"></i>
                     </div>
                     <div className="footer-links">
-                        <Link href="/contact"><a>關於我們</a></Link>
+                        <Link href="/contact/"><a>關於我們</a></Link>
                         <Link href="/contact/#address"><a>門市地址</a></Link>
-                        <Link href="/privacy"><a>私隱政策</a></Link>
-                        <Link href="/disclaimer"><a>免責條款</a></Link>
+                        <Link href="/privacy/"><a>私隱政策</a></Link>
+                        <Link href="/disclaimer/"><a>免責條款</a></Link>
                     </div>
                     <hr />
                     <div className="copyright">COPYRIGHT©PERFECT MEDICAL LIMITED 2020 All Right RESERVED.</div>

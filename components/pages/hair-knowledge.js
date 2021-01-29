@@ -12,7 +12,7 @@ const HairKnowledgeLayout = (props) => {
                     <div className="row">
                         <div className="col-md-12">
                             <div className="desktop">
-                                <div className="banner-hero"><img src={tn.banner_hero} /></div>
+                                <div className={`banner-hero ${gender}`}><img src={tn.banner_hero} /></div>
                                 <div className="banner-tagline"><img src={tn.banner_tagline} /></div>
                                 <div className="banner-free-trial-banner"><img src="/images/treatment_free_trial_banner.png" /></div>
                             </div>
@@ -77,7 +77,7 @@ const HairKnowledgeLayout = (props) => {
                 </div>
             </div>
 
-            <div className="content">
+            <div className="content bottom-no-padding">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12 description">醫療級軟激光生髮科技，針對易脫髮的生長週期，以「止脫」為理念，專門解決大量脫髮問題，延長頭髮的壽命，平衡脫髮速度及生長速度。</div>
@@ -91,7 +91,7 @@ const HairKnowledgeLayout = (props) => {
 
 
 
-            <div className="section even">
+            <div className="section even" id="fda-anchor">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
