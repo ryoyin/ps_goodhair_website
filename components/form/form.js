@@ -142,13 +142,9 @@ const Form = () => {
                 <div className="checkable_item">
                     <input type="checkbox" name="tnc" value={isPrivacy} onChange={() => setIsPrivacy(!isPrivacy)} />
                     本人已閱讀並同意
-                    <Link href='/'>
-                        <a>私隱政策</a>
-                    </Link>
+                    <a href='/privacy' target='_blank'>私隱政策</a>
                     與
-                    <Link href='/'>
-                        <a>條款細則</a>
-                    </Link>
+                    <a href='/terms-and-conditions' target='_blank'>條款細則</a>
                     。
                 </div>
                 <div className="checkable_item">

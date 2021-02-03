@@ -241,6 +241,7 @@ footer {
     padding: 2rem 0 0.5rem;
     i {
       margin: 0 7px;
+      cursor: pointer;
     }
   }
   .footer-links {
@@ -264,6 +265,21 @@ footer {
     border-right: 1px solid #707070;
     &:last-child {
       border-right: 0;
+    }
+  }
+  .footer-country {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5rem;
+    .countrydiv {
+      display: flex;
+      flex-direction: row;
+      margin: 0 0.7rem;
+      img {
+        width: 25px;
+        height: 25px;
+        margin-right: 0.5rem;
+      }
     }
   }
 }
@@ -333,7 +349,6 @@ footer {
     }
   }
 }
-
 
 #fda-anchor {
   margin-top: 10rem;

@@ -116,11 +116,7 @@ const Layout = (props) => {
 
                 <footer>
                     <div className="footer-social-media">
-                        <i className="pss ps-wts"></i>
-                        <i className="pss ps-in"></i>
-                        <i className="pss ps-fb"></i>
-                        <i className="pss ps-youtube"></i>
-                        <i className="pss ps-map"></i>
+                        <a href="https://www.facebook.com/Good-Hair-%E7%88%86%E9%AB%AE-%E5%9C%8B%E9%9A%9B%E6%B4%BB%E9%AB%AE%E5%B0%88%E5%AE%B6-104625151566321" target="_blank"><i className="pss ps-fb"></i></a>
                     </div>
                     <div className="footer-links">
                         <Link href="/contact/"><a>關於我們</a></Link>
@@ -130,6 +126,11 @@ const Layout = (props) => {
                     </div>
                     <hr />
                     <div className="copyright">COPYRIGHT©PERFECT MEDICAL LIMITED 2020 All Right RESERVED.</div>
+                    <div className="footer-country">
+                        <div className="countrydiv"><img src="/images/Group_10393.png" alt="hk"/><span>香港</span></div>
+                        <div className="countrydiv"><img src="/images/Group_10394.png" alt="au"/><span>澳洲</span></div>
+                        <div className="countrydiv"><img src="/images/Group_10396.png" alt="macau"/><span>澳門</span></div>
+                    </div>
                 </footer>
                 <script src="/js/bootstrap.bundle.min.js"></script>
             </SystemProvider>
