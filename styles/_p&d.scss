@@ -1,30 +1,44 @@
 .privacy {
-    color: #707070;
-    padding-top: 20px;
-    margin: auto;
-    // font-weight: 600;
-    display: grid;
-    // font-size: 20px;
-    section {
-        display: block;
-    }
-    .pl-40px {
-        padding-left: 40px;
-    }
-
+  color: #707070;
+  padding-top: 20px;
+  margin: auto;
+  // font-weight: 600;
+  display: grid;
+  // font-size: 20px;
+  section {
+    display: block;
+  }
+  .pl-40px {
+    padding-left: 40px;
+  }
 }
 .disclaimer {
+  color: #707070;
+  padding-top: 20px;
+  margin: auto;
+  // font-weight: 600;
+  display: grid;
+  // font-size: 20px;
+  section {
+    display: block;
+  }
+  .pl-40px {
+    padding-left: 40px;
+  }
+}
+.thankyou {
+  text-align: center;
+  .content {
+    margin-bottom: 10rem;
     color: #707070;
-    padding-top: 20px;
-    margin: auto;
-    // font-weight: 600;
-    display: grid;
-    // font-size: 20px;
-    section {
-        display: block;
+    .book-success {
+      color: #6e90b8;
+      font-size: 2rem;
+      font-weight: bold;
+      margin: 3rem 0;
+      @media screen and (min-width: 576px) {
+        font-size: 3rem;
+      }
     }
-    .pl-40px {
-        padding-left: 40px;
-    }
-
+  }
 }

@@ -1,8 +1,8 @@
-import TCLayout from '../components/pages/terms-and-conditions'
-import { getTranslation } from '@/data/terms-and-conditions'
+import ThankyouLayout from '../components/pages/thankyou'
+import { getTranslation } from '@/data/thankyou'
 import { getGender } from '@/functions/common'
 import Layout from '@/components/layout/layout'
-const TC = (props) => {
+const Thankyou = (props) => {
     const currentPage = props.currentPage
     const gender = props.gender
     const translation = props.translation
@@ -12,12 +12,12 @@ const TC = (props) => {
             gender={gender}
             translation={translation}
         >
-            <TCLayout />
+            <ThankyouLayout />
         </Layout>
     )
 }
-TC.getInitialProps = async () => {
-    const currentPage = 'terms-and-conditions'
+Thankyou.getInitialProps = async () => {
+    const currentPage = 'thankyou'
     const gender = getGender(currentPage)
     const translation = await getTranslation()
     return {
@@ -25,7 +25,7 @@ TC.getInitialProps = async () => {
     }
 }
 
-export default TC
+export default Thankyou
 
 
 
