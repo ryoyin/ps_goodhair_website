@@ -131,13 +131,19 @@
       &.male{
         img {
           width: 600px;
+          @media only screen and (min-width: 1024px) and (max-width: 1024px) {
+          margin-right: 243px;
         }
+      }
       }
     }
     .banner-tagline {
       position: absolute;
       top: 186px;
       z-index: 2;
+      @media only screen and (min-width: 1024px) and (max-width: 1024px){
+      margin-left: -67px;
+      margin-top: -39px;}
       img {
         width: 600px;
       }
