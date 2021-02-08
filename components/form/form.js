@@ -1,7 +1,7 @@
-
 import React, {useEffect, useState, useContext} from 'react';
 import Link from 'next/link';
-import {submitForm } from '../../utils/common';
+import { useRouter } from 'next/router';
+import { submitForm } from '../../utils/common';
 import { SystemContext } from '../../utils/SystemProvider';
 import MyTimeDateShopComponent from '../common/MyTimeDateShopComponent';
 import {MenuItem, Select, InputLabel } from '@material-ui/core';
@@ -11,6 +11,7 @@ import MyShop from "../common/MyShop";
 
 const Form = () => {
     const system = useContext(SystemContext);
+    const router = useRouter();
     const shop = {
         className: 'shop-input',
         placeholder: "選擇療程分店",
@@ -67,7 +68,7 @@ const Form = () => {
         if (error.length > 0) { alert(error.join('\n')); return; }
         submitForm({
             name: myName,
-            tel_area: '',
+            // tel_area: '',
             tel: myPhone,
             email: myMail,
             center: myShop.id,
@@ -79,26 +80,32 @@ const Form = () => {
             position: '',
             gender: 'F',
             hide: '',
-            formType: 'PH_Website_F8_HK1173_PS2783_5903',
+            formType: 'GH_SEO_FDA_HK1455_PS82063_9711',
             freetryitem: 'Nil',
             question: '',
             referral: '',
             ageRange: '0',
             distinct: '0',
-            Landing_ID: 'PH_Website_F8_HK1173_PS2783_5903',
-            PSTeam: 'PS2783',
-            PromotionCode: 'HK1173',
-            promotion_code: 'HK1173',
-            PIC: 'Kary Lam',
-            Channel: 'Website',
-            Landing_Description: '髮神F8生髮療程-免費體驗送水光針面膜1盒',
-            TreatmentCode: 'FPR2214',
+            Landing_ID: 'GH_SEO_FDA_HK1455_PS82063_9711',
+            PSTeam: 'PS82063',
+            PromotionCode: 'HK1455',
+            promotion_code: 'HK1455',
+            PIC: 'SEO Team',
+            Channel: 'SEO Website',
+            Landing_Description: 'FDA防脫髮療程',
+            TreatmentCode: 'PR2936',
+            treatment_name: '【免費體驗】FDA 防脫髮療程',
+            ps_equipment: 'FDA 防脫髮療程',
+            gift: 'Dior唇膏/金羊胎面膜',
             SMS: '1',
             Reserve1: '',
             Reserve2: '',
         }).then((x) => {
             router.push(window.location.origin + '/thankyou');
-        }).catch(x => alert('系統錯誤，請稍後再試。'))
+        }).catch(x => {
+            console.log(x);
+            alert('系統錯誤，請稍後再試。')
+        })
     }
 
     return (
