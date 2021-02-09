@@ -28,8 +28,10 @@ export default function MyTimeDateShopComponent(props) {
                 shouldDisableDate={(currentDate) => {
                     const enableToday = isToday(currentDate);
                     const isBefore28 = isBefore(currentDate, after28Day);
-                    const closeDay = [...myShop.close_day || [], ...myShop.full_dates || []].indexOf(format(currentDate, dateFormat)) > -1;
-                    return !(enableToday || isBefore28) || closeDay;
+                    const closeDates = [...myShop.close_dates || [], ...myShop.full_dates || []].indexOf(format(currentDate, dateFormat)) > -1; //dates
+                    const todayIsCloseDay = (myShop?.close_day || []).indexOf(getDay(currentDate)) > -1; //day
+
+                    return !(enableToday || isBefore28) || closeDates || todayIsCloseDay;
                 }}
                 invalidLabel="錯誤格式"
                 cancelLabel="取消"
