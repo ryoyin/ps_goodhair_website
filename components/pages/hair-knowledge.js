@@ -17,7 +17,8 @@ const HairKnowledgeLayout = (props) => {
                                 <div className="banner-free-trial-banner"><img src="/images/treatment_free_trial_banner.png" /></div>
                             </div>
                             <div className="mobile">
-                                <div className="banner-mobile-hero"><img src="/images/m_women_mobile_banner.png" /></div>
+                                {/* <div className="banner-mobile-hero"><img src="/images/m_women_mobile_banner.png" /></div> */}
+                                <div className="banner-mobile-hero"><img src={tn.mobile_hero} /></div>
                             </div>
                             <Form />
                             {/* <form>

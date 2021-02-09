@@ -8,6 +8,7 @@ const hairKnowledge = {
         content: {
             banner_hero: "/images/treatment_banner_boy.png",
             banner_tagline: "/images/d_hp_tagline_man.png",
+            mobile_hero: "/images/m_men_mobile_banner.png",
             case_before: "/images/treatment-boy-case-before.png",
             case_after: "/images/treatment-boy-case-after.png",
             hair_loss: [
@@ -58,6 +59,7 @@ const hairKnowledge = {
         content: {
             banner_hero: "/images/treatment_banner_girl.png",
             banner_tagline: "/images/d_hp_tagline_woman.png",
+            mobile_hero: "/images/m_women_mobile_banner.png",
             case_before: "/images/treatment-girl-case-before.png",
             case_after: "/images/treatment-girl-case-after.png",
             hair_loss: [
